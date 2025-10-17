@@ -1,5 +1,3 @@
-/* ===== Tema Gótico Vítreo Moderno com Névoa Realista ===== */
-
 :root {
   --vermelho-sangue: #a00020;
   --vermelho-brilho: #FF2829;
@@ -10,7 +8,6 @@
   --borda: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== Corpo ===== */
 body {
   font-family: "Crimson Text", serif;
   background: #0b0b0b;
@@ -21,7 +18,6 @@ body {
   position: relative;
 }
 
-/* ===== NÉVOA MELHORADA ===== */
 .fog-layer {
   position: fixed;
   top: 0;
@@ -61,7 +57,6 @@ body {
   animation: fogDriftC 160s ease-in-out infinite;
 }
 
-/* Movimento irregular e cruzado */
 @keyframes fogDriftA {
   0%   { transform: translate(-15%, -10%) scale(1) rotate(0deg); }
   25%  { transform: translate(10%, -5%) scale(1.05) rotate(3deg); }
@@ -86,7 +81,6 @@ body {
   100% { transform: translate(-5%, 5%) scale(1) rotate(0deg); }
 }
 
-/* ===== Cabeçalho ===== */
 header {
   background: linear-gradient(145deg, var(--cinza-escuro), var(--cinza-meio));
   color: var(--vermelho-brilho);
@@ -102,6 +96,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -122,7 +117,6 @@ h1 {
 .icon-axe { width: 44px; height: 44px; }
 .icon-drop { width: 36px; height: 44px; }
 
-/* ===== Seções ===== */
 section {
   background: var(--vidro);
   border: 1px solid var(--borda);
@@ -133,13 +127,18 @@ section {
   backdrop-filter: blur(8px);
 }
 
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 h2 {
   font-family: "Cinzel", serif;
   color: var(--vermelho-brilho);
   margin: 0 0 12px 0;
 }
 
-/* ===== Tabelas ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -153,6 +152,7 @@ table th, table td {
   border: 1px solid var(--borda);
   padding: 10px;
   text-align: center;
+  word-break: break-word;
 }
 
 table th {
@@ -165,7 +165,6 @@ table tr:hover {
   background: rgba(255,255,255,0.06);
 }
 
-/* ===== Ícones e destaques ===== */
 .ic {
   vertical-align: middle;
   fill: currentColor;
@@ -187,7 +186,6 @@ table tr:hover {
   align-items: center;
 }
 
-/* ===== Filtros e listas ===== */
 select {
   background: rgba(0,0,0,0.4);
   border: 1px solid var(--borda);
@@ -206,7 +204,6 @@ li {
   margin-bottom: 6px;
 }
 
-/* ===== Rodapé ===== */
 footer {
   text-align: center;
   font-size: 0.9em;
@@ -215,10 +212,35 @@ footer {
   padding-bottom: 20px;
 }
 
-/* ===== Responsividade ===== */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 16px;
+    margin: 24px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body { padding: 15px; }
+  h1 { font-size: 1.9rem; }
+  .logo { gap: 10px; }
+  .icon-axe { width: 40px; height: 40px; }
+  .icon-drop { width: 32px; height: 40px; }
+  table th, table td { padding: 8px; font-size: 0.9rem; }
+}
+
 @media (max-width: 640px) {
+  body { padding: 10px; }
   h1 { font-size: 1.6rem; }
-  .logo { gap: 8px; }
+  .logo { flex-direction: column; gap: 8px; }
   .icon-axe { width: 36px; height: 36px; }
   .icon-drop { width: 28px; height: 36px; }
+  section { padding: 12px; margin: 18px 0; border-radius: 12px; }
+  table th, table td { padding: 6px; font-size: 0.8rem; }
+  select { width: 100%; font-size: 0.9rem; }
+  footer { font-size: 0.8rem; padding-bottom: 15px; }
 }
