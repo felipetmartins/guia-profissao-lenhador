@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de Profissão: Senhor Lenhador</title>
+
+  <!-- Fontes: Cinzel (gótico legível) + Crimson Text (corpo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- Machado -->
+      <svg width="44" height="44" viewBox="0 0 24 24" class="icon-axe">
+        <path fill="currentColor" d="M20.7 4.3a1 1 0 0 0-1.4 0l-3.3 3.3-1.9-1.9a1 1 0 0 0-1.4 0L6.1 11.8a6 6 0 0 0 8.5 8.5l3.6-5.5a1 1 0 0 0 0-1.4l-1.9-1.9 3.3-3.3a1 1 0 0 0 0-1.4z"/>
+      </svg>
+
+      <h1>Guia de Profissão: Senhor Lenhador</h1>
+
+      <!-- Gota -->
+      <svg width="36" height="44" viewBox="0 0 24 32" class="icon-drop">
+        <path fill="currentColor" d="M12 0C7 7 3 11.9 3 17.5 3 23.6 7.9 28 14 28s11-4.4 11-10.5C25 11.9 21 7 16 0h-4z"/>
+      </svg>
+    </div>
+  </header>
+
+<section id="introducao">
+  <h2>Introdução</h2>
+
+  <!-- Parte narrativa -->
+  <p>Dizem que, antes das grandes muralhas e das coroas douradas, vieram os machados.</p>
+  <p>Foram os <strong>Lenhadores</strong> quem abriram as clareiras onde as cidades se ergueram, quem alimentaram as forjas com lenha e carvão, quem moldaram os andaimes das catedrais e os caixões dos reis.</p>
+  <p>Nenhuma lâmina guerreira corta tão fundo quanto o aço de um bom lenhador. Nenhum alquimista conhece tanto o cheiro da vida e da morte quanto aquele que sangra as árvores sob a lua.</p>
+  <p>Trabalham na penumbra, entre o sussurro das folhas e o rugido das bestas, colhendo o que os humanos chamam de “madeira”, mas o mundo antigo chamava de “carne da terra”.</p>
+  <p>São os arquitetos invisíveis da civilização — ignorados pelos nobres, temidos pelas florestas. E mesmo que os reinos caiam e as fogueiras se apaguem, sempre restará um Lenhador afiando seu machado, pronto para reconstruir o que o fogo destruiu.</p>
+
+  <!-- Parte prática -->
+  <p>
+    A profissão <strong>Lenhador</strong> permite coletar madeira e processá-la em produtos valiosos como tábuas, serragem, óleo e pólen. 
+    O guia considera <strong>bônus de piso de carpintaria</strong> (menos madeira por ciclo) e <strong>sala fechada</strong> (redução de tempo), permitindo otimizar seu trabalho nas florestas e na cidade.
+  </p>
+</section>
+
+
+  <section id="bonus">
+    <h2>⚙️ Bônus e Atributos</h2>
+    <ul>
+      <li><strong>Machado ou Espada de duas mãos:</strong> cortam 25% mais rápido.</li>
+      <li><strong>Classe Mortak:</strong> A skill Q da Espada de duas mãos derruba até 3 árvores se estiverem alinhadas.</li>
+      <li><strong>Sangue de Trabalhador:</strong> aumenta rendimento (28,8%), dano a recursos (28,8%) e tem chance de derrubar instantaneamente (3,6%).</li>
+      <li><strong>Combinação com sangue de Brutamontes:</strong> +Velocidade de Ataque Primário (16,8%) e +Poder Físico (6%).</li>
+      <li><strong>Prestígio - Senhor Lenhador:</strong> +50% fragmentos primordiais e +25% recursos por nível (máx. 3 níveis e custa 50 sangricoins cada nível).</li>
+    </ul>
+  </section>
+
+  <section id="madeiras">
+    <h2>📊 Tabela de Tipos de Madeiras</h2>
+    <label for="filtroPlantavel">É plantável na base?:</label>
+    <select id="filtroPlantavel">
+      <option value="todos">Todos</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Madeira</th>
+          <th>Plantável?</th>
+          <th>Stack</th>
+          <th>Bruto (P$)</th>
+          <th>Processado (P$)</th>
+          <th>Diferença</th>
+          <th>Observação</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaMadeiras">
+        <tr>
+          <td>Madeira comum</td>
+          <td><span class="positive"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span></td>
+          <td>3.000</td>
+          <td>30,00</td>
+          <td>63,90</td>
+          <td><span class="positive">+113%</span></td>
+          <td>Melhor custo-benefício geral</td>
+        </tr>
+        <tr>
+          <td>Madeira sagrada</td>
+          <td><span class="negative"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3 10.6 10.6 16.9 4.3z"/></svg></span></td>
+          <td>750</td>
+          <td>22,50</td>
+          <td>42,38</td>
+          <td><span class="positive">+88%</span></td>
+          <td>Alta rentabilidade, mas depende de coleta no mapa</td>
+        </tr>
+        <tr>
+          <td>Madeira sombria</td>
+          <td><span class="positive"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span></td>
+          <td>750</td>
+          <td>22,50</td>
+          <td>30,00</td>
+          <td><span class="positive">+33%</span></td>
+          <td>Boa opção intermediária</td>
+        </tr>
+        <tr>
+          <td>Madeira amaldiçoada</td>
+          <td><span class="positive"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></span></td>
+          <td>750</td>
+          <td>22,50</td>
+          <td>30,19</td>
+          <td><span class="positive">+34%</span></td>
+          <td>Inclui cogumelo azul processado em pólen</td>
+        </tr>
+        <tr>
+          <td>Madeira corrompida</td>
+          <td><span class="negative"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3 10.6 10.6 16.9 4.3z"/></svg></span></td>
+          <td>750</td>
+          <td>22,50</td>
+          <td>15,00</td>
+          <td><span class="negative">−33%</span></td>
+          <td>Valor baixo — só vale pelos subprodutos</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="dicas">
+    <h2>💡 Dicas Práticas</h2>
+    <ul>
+      <li>Priorize árvores que podem ser plantadas na base para produção contínua.</li>
+      <li>Processar a madeira em produtos geralmente rende mais que vender madeira crua (exceção: Madeira corrompida).</li>
+      <li>Madeiras não plantáveis dependem de coleta no mapa, o que pode tornar a coleta mais demorada.</li>
+      <li>Subprodutos como produzir pólen dos cogumelos azuis podem gerar ganhos extras.</li>
+      <li>Combine ferramentas adequadas, atributos e prestígio para maximizar lucro.</li>
+      <li>Não existe árvore que drope mais madeira — vai do seu gosto!.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Guia do Senhor Lenhador — forjado sob a lua de sangue!</p>
+	<p>Prepare-se para despertar como um verdadeiro vampiro em Sangria Falls, o maior e mais ativo servidor de V Rising da América Latina. Aqui, você encontrará uma experiência única e totalmente personalizada, com diversos mods exclusivos, eventos frequentes, sistemas únicos de progressão e uma comunidade engajada que vive intensamente o mundo sombrio de Vardoran.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  
+<div class="fog-layer"></div>
+<div class="fog-layer fog2"></div>
+<div class="fog-layer fog3"></div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+/* ===== Tema Gótico Vítreo Moderno com Névoa Realista ===== */
+
+:root {
+  --vermelho-sangue: #a00020;
+  --vermelho-brilho: #FF2829;
+  --cinza-escuro: #111;
+  --cinza-meio: #1b1b1b;
+  --vidro: rgba(255, 255, 255, 0.04);
+  --texto: #e6e6e6;
+  --borda: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Corpo ===== */
+body {
+  font-family: "Crimson Text", serif;
+  background: #0b0b0b;
+  color: var(--texto);
+  margin: 0;
+  padding: 0 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== NÉVOA MELHORADA ===== */
+.fog-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(120px);
+  mix-blend-mode: lighten;
+  background: 
+    radial-gradient(ellipse at 20% 40%, rgba(255,255,255,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 40% 80%, rgba(255,255,255,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: fogDriftA 140s linear infinite;
+}
+
+.fog-layer.fog2 {
+  opacity: 0.22;
+  filter: blur(150px);
+  background:
+    radial-gradient(ellipse at 30% 70%, rgba(255,255,255,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse at 60% 20%, rgba(255,255,255,0.10) 0%, transparent 60%);
+  animation: fogDriftB 180s linear infinite;
+}
+
+.fog-layer.fog3 {
+  opacity: 0.18;
+  filter: blur(180px);
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(255,255,255,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse at 75% 70%, rgba(255,255,255,0.1) 0%, transparent 75%),
+    radial-gradient(ellipse at 55% 90%, rgba(255,255,255,0.08) 0%, transparent 70%);
+  animation: fogDriftC 160s ease-in-out infinite;
+}
+
+/* Movimento irregular e cruzado */
+@keyframes fogDriftA {
+  0%   { transform: translate(-15%, -10%) scale(1) rotate(0deg); }
+  25%  { transform: translate(10%, -5%) scale(1.05) rotate(3deg); }
+  50%  { transform: translate(15%, 10%) scale(1.08) rotate(-2deg); }
+  75%  { transform: translate(-5%, 15%) scale(1.02) rotate(1deg); }
+  100% { transform: translate(-15%, -10%) scale(1) rotate(0deg); }
+}
+
+@keyframes fogDriftB {
+  0%   { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+  25%  { transform: translate(-10%, 15%) scale(1.07) rotate(-2deg); }
+  50%  { transform: translate(10%, 10%) scale(1.1) rotate(2deg); }
+  75%  { transform: translate(5%, -10%) scale(1.03) rotate(-3deg); }
+  100% { transform: translate(0%, 0%) scale(1) rotate(0deg); }
+}
+
+@keyframes fogDriftC {
+  0%   { transform: translate(-5%, 5%) scale(1) rotate(0deg); }
+  25%  { transform: translate(8%, 10%) scale(1.04) rotate(1deg); }
+  50%  { transform: translate(-8%, 15%) scale(1.08) rotate(-2deg); }
+  75%  { transform: translate(10%, -10%) scale(1.02) rotate(1deg); }
+  100% { transform: translate(-5%, 5%) scale(1) rotate(0deg); }
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  background: linear-gradient(145deg, var(--cinza-escuro), var(--cinza-meio));
+  color: var(--vermelho-brilho);
+  text-align: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--borda);
+  box-shadow: 0 0 14px rgba(200,0,40,0.25);
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 0;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 10px rgba(208,27,96,0.15);
+}
+
+.icon-axe, .icon-drop {
+  display: block;
+  color: var(--vermelho-sangue);
+  filter: drop-shadow(0 2px 6px rgba(160,0,32,0.35));
+}
+
+.icon-axe { width: 44px; height: 44px; }
+.icon-drop { width: 36px; height: 44px; }
+
+/* ===== Seções ===== */
+section {
+  background: var(--vidro);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+  padding: 18px;
+  margin: 28px 0;
+  backdrop-filter: blur(8px);
+}
+
+h2 {
+  font-family: "Cinzel", serif;
+  color: var(--vermelho-brilho);
+  margin: 0 0 12px 0;
+}
+
+/* ===== Tabelas ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+}
+
+table th, table td {
+  border: 1px solid var(--borda);
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background: rgba(255,255,255,0.04);
+  color: var(--vermelho-brilho);
+  font-family: "Cinzel", serif;
+}
+
+table tr:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ===== Ícones e destaques ===== */
+.ic {
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.positive {
+  color: #7fff7f;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.negative {
+  color: #ff7b7b;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ===== Filtros e listas ===== */
+select {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+
+ul {
+  list-style-type: '❖ ';
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  .logo { gap: 8px; }
+  .icon-axe { width: 36px; height: 36px; }
+  .icon-drop { width: 28px; height: 36px; }
+}
